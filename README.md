@@ -36,10 +36,16 @@ E-Commerce Platform: Users place orders, and the order system handles processing
 Enterprise Resource Planning (ERP): Separate services for handling employees, sales, and inventory.
 Event Management System: Users register for events, and orders represent ticket purchases.
 
-| Column 1 | Column 2 | Column 3 |
+## System Architecture
+### Microservices Breakdown
+
+| Service Name | Description | Port |
 | -------- | -------- | -------- |
-| Row 1    | Value 1  | Value 2  |
-| Row 2    | Value 3  | Value 4  |
+| API Gateway    | Central entry point for handling requests  | 5000  |
+| User Service |	Manages user-related operations |	5001
+| Order Service |	Handles order processing |	5002
+| User Database |	PostgreSQL instance for storing users |	5432
+| Order Database |	PostgreSQL instance for storing orders |	5433
 
 ## Architecture Diagram
 (Add an architectural diagram here to show the relationships between services)
