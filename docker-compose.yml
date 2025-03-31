@@ -5,6 +5,8 @@ services:
     build: ./user-service
     ports:
       - "5001:5001"
+    depends_on:
+      - user-db
     networks:
       - microservices-network
 
@@ -12,6 +14,8 @@ services:
     build: ./order-service
     ports:
       - "5002:5002"
+    depends_on:
+      - order-db
     networks:
       - microservices-network
 
@@ -22,6 +26,30 @@ services:
     depends_on:
       - user-service
       - order-service
+    networks:
+      - microservices-network
+
+  user-db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: usersdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    networks:
+      - microservices-network
+
+  order-db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: ordersdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5433:5432"
     networks:
       - microservices-network
 
