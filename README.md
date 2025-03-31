@@ -8,10 +8,15 @@ Traditional monolithic applications bundle all services together, leading to sca
 
 ### Key Benefits:
 ✅ Modularity: Separate services for User Management and Order Processing.
+
 ✅ Independent Scaling: Each microservice can scale based on demand.
+
 ✅ Fault Isolation: Issues in one service do not crash the entire system.
+
 ✅ Technology Agnostic: Different microservices can use different technologies in the future.
+
 ✅ Cloud-Ready Deployment: Designed for easy deployment on AWS, GCP, or Azure.
+
 
 ## Features & Technologies used:
 - **Microservices Architecture**: Independent services for users and orders.
@@ -143,14 +148,7 @@ CREATE TABLE orders (id SERIAL PRIMARY KEY, item VARCHAR(100));
 INSERT INTO orders (item) VALUES ('Order1'), ('Order2');
 SELECT * FROM orders;
 ```
-(Screenshot: Add a screenshot of order database setup)
-
-## Roadmap
-✅ **Add Database Support**  
-🚀 **Integrate Authentication (JWT)**  
-🌍 **Deploy on AWS using Kubernetes (EKS)**  
-📈 **Add Monitoring and Logging**  
-🔐 **Enhance Security Measures**  
+(Screenshot: Add a screenshot of order database setup) 
 
 ## Contribution Guidelines
 We welcome contributions! Please follow these steps:
